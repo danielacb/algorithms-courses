@@ -6,9 +6,40 @@ return the equivalent of the sentence when capitalised. E.g
 
 
 
-
+// Using forEach() and slice()
 function capSentence(text) {
-   // Code goes here
+  const capsArray = [];
+  text = text.toLowerCase().split(' ');
+  
+  text.forEach(word => {
+    capsArray.push(word[0].toUpperCase() + word.slice(1));
+  });
+  
+  return capsArray.join(' ');
+}
+
+// Using forEach() and replace()
+function capSentence(text) {
+  const capsArray = [];
+  text = text.toLowerCase().split(' ');
+  
+  text.forEach(word => {
+    capsArray.push(word.replace(word[0], word[0].toUpperCase()));
+  });
+  
+  return capsArray.join(' ');
+}
+
+// Using map() and slice()
+function capSentence(text) {
+  text = text.toLowerCase().split(' ');
+  return text.map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
+}
+
+// Using map() and replace()
+function capSentence(text) {
+  text = text.toLowerCase().split(' ');
+  return text.map(word => word.replace(word[0], word[0].toUpperCase())).join(' ');
 }
 
 
