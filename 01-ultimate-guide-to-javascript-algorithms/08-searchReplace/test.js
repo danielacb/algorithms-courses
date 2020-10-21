@@ -1,4 +1,4 @@
-const searchReplace = require('./index-START')
+const searchReplace = require('./index')
 
 test('searchReplace is a function', () => {
   expect(typeof searchReplace).toEqual('function')
