@@ -5,5 +5,11 @@ ordering of that which was received. E.g
 */
 
 function reverseString(text) {
-  
+  return [...text].reduce((a,b) => b + a, '');
+}
+
+function reverseInteger(num) {
+  let reversedNumber = parseInt(reverseString(num.toString()));
+
+  return (reversedNumber * Math.sign(num));
 }
